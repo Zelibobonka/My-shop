@@ -5,6 +5,12 @@ import Spinner from "../ui/Spinner";
 import ModalWrap from "../ui/ModalWrap";
 import ProductForm from "../features/products/ProductForm";
 import ItemDelete from "../ui/ItemDelete";
+import styled from "styled-components";
+
+const ProductFormWrap = styled.div`
+  width: calc(100vw - 40px);
+  max-width: 40rem;
+`;
 
 function PageProduct() {
   const { isLoading, product } = useProduct();
@@ -30,7 +36,12 @@ function PageProduct() {
 
       <ModalWrap isModalOpen={isModalOpen} onCloseModal={onCloseModal}>
         {selectedProduct && (
-          <ProductForm product={selectedProduct} onCloseModal={onCloseModal} />
+          <ProductFormWrap>
+            <ProductForm
+              product={selectedProduct}
+              onCloseModal={onCloseModal}
+            />
+          </ProductFormWrap>
         )}
         {itemDelete && (
           <ItemDelete
