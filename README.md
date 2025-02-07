@@ -1,1 +1,1 @@
-# My shop
+# My shop (React, React Query, React Router, Styled Components)
